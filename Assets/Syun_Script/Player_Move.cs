@@ -5,7 +5,10 @@ public class Player_Move : MonoBehaviour
     public Transform Camera;
     public float PlayerSpeed;
     public float RotationSpeed;
-
+    public float Jump;
+    public Rigidbody rb;
+    // 接地判定用の設定
+    public float rayDistance = 0.6f;
     Vector3 speed = Vector3.zero;
     Vector3 rot = Vector3.zero;
 
@@ -50,6 +53,11 @@ public class Player_Move : MonoBehaviour
             MoveSet();
         }
 
+        if(Input.GetKeyDown(KeyCode.Space) && IsGround())
+        {
+            rb.AddForce(0f, Jump, 0f);
+        }
+
         transform.Translate(speed* Time.deltaTime);
         
     }
@@ -58,6 +66,12 @@ public class Player_Move : MonoBehaviour
     {
         speed.z = PlayerSpeed;
         transform.eulerAngles = new Vector3(0, Camera.transform.eulerAngles.y + rot.y, 0);
+    }
+
+    bool IsGround()
+    {
+        // 足元に短い線(Ray)を飛ばして、何かに当たれば true
+        return Physics.Raycast(transform.position, Vector3.down, rayDistance);
     }
 
     void Rotation()
