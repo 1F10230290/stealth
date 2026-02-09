@@ -6,12 +6,16 @@ public class Player_Move : MonoBehaviour
     public float PlayerSpeed;
     public float RotationSpeed;
     public float Jump;
+    public Animator PlayerAnimator;
     public Rigidbody rb;
     // 接地判定用の設定
     public float rayDistance = 0.6f;
     Vector3 speed = Vector3.zero;
     Vector3 rot = Vector3.zero;
 
+    bool isRun;
+    bool isCrouch = false;
+    
     void Start()
     {
         
@@ -31,6 +35,7 @@ public class Player_Move : MonoBehaviour
     {
         speed = Vector3.zero;
         rot = Vector3.zero;
+        isRun = false;
         
         if(Input.GetKey(KeyCode.W))
         {
@@ -53,12 +58,25 @@ public class Player_Move : MonoBehaviour
             MoveSet();
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && IsGround())
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            isCrouch = !isCrouch; //状態反転
+            PlayerAnimator.SetBool("crounch", isCrouch);
+        }
+
+        if(!isCrouch && Input.GetKeyDown(KeyCode.Space) && IsGround())
         {
             rb.AddForce(0f, Jump, 0f);
         }
 
+        // しゃがみ時は速度半分
+        float currentSpeed = isCrouch ? PlayerSpeed / 2f : PlayerSpeed;
+        speed.z = isRun ? currentSpeed : 0;
+
+        
         transform.Translate(speed* Time.deltaTime);
+        PlayerAnimator.SetBool("run", isRun);
+        PlayerAnimator.SetBool("crounchWalk", isRun && isCrouch);
         
     }
 
@@ -66,6 +84,7 @@ public class Player_Move : MonoBehaviour
     {
         speed.z = PlayerSpeed;
         transform.eulerAngles = new Vector3(0, Camera.transform.eulerAngles.y + rot.y, 0);
+        isRun = true;
     }
 
     bool IsGround()

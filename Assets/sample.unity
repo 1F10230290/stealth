@@ -486,6 +486,9 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b021699b4f06db4bbceae5db7b4e28f, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1354717175}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b021699b4f06db4bbceae5db7b4e28f, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1354717170}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6b021699b4f06db4bbceae5db7b4e28f, type: 3}
       insertIndex: -1
@@ -512,11 +515,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player_Move
   Camera: {fileID: 938090802}
-  PlayerSpeed: 20
+  PlayerSpeed: 4
   RotationSpeed: 100
-  Jump: 5
+  Jump: 400
+  PlayerAnimator: {fileID: 1354717175}
   rb: {fileID: 1354717173}
-  rayDistance: 1
+  rayDistance: 0.5
 --- !u!136 &1354717172
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -567,6 +571,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!95 &1354717175
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354717169}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 26d4182d04da96f49bac9fc99411a0e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1415936337
 GameObject:
   m_ObjectHideFlags: 0
