@@ -58,7 +58,7 @@ public class Player_Move : MonoBehaviour
             MoveSet();
         }
 
-        if(Input.GetKeyDown(KeyCode.F))
+        if(Input.GetKeyDown(KeyCode.F) && PlayerAnimator != null)
         {
             isCrouch = !isCrouch; //状態反転
             PlayerAnimator.SetBool("crounch", isCrouch);
@@ -75,8 +75,11 @@ public class Player_Move : MonoBehaviour
 
         
         transform.Translate(speed* Time.deltaTime);
-        PlayerAnimator.SetBool("run", isRun);
-        PlayerAnimator.SetBool("crounchWalk", isRun && isCrouch);
+        if(PlayerAnimator != null)
+        {
+            PlayerAnimator.SetBool("run", isRun);
+            PlayerAnimator.SetBool("crounchWalk", isRun && isCrouch);
+        }
         
     }
 
