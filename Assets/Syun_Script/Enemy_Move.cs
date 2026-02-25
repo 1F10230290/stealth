@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMove : MonoBehaviour
+public class Enemy_Move : MonoBehaviour
 {
     
     //状態
