@@ -7,4 +7,13 @@ public class Button : MonoBehaviour
     {
         SceneManager.LoadScene("sample");
     }
+
+    public void OnClickedReplayButton()
+    {
+        SceneManager.LoadScene("sample");
+    }
+    public void OnClickedExitButton()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }
