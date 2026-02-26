@@ -15,6 +15,7 @@ public class Player_Move : MonoBehaviour
 
     bool isRun;
     bool isCrouch = false;
+    public bool canMove = true;
     
     void Start()
     {
@@ -39,6 +40,8 @@ public class Player_Move : MonoBehaviour
 
     void Move()
     {
+        Debug.Log(canMove);
+        if(!canMove) return; // 移動禁止中は何もしない
         speed = Vector3.zero;
         rot = Vector3.zero;
         isRun = false;
