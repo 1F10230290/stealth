@@ -18,7 +18,7 @@ public class Player_Move : MonoBehaviour
     
     void Start()
     {
-        
+        transform.position = new Vector3(13.6f, 11.7f, 19.9f);
     }
 
     // Update is called once per frame
@@ -29,6 +29,12 @@ public class Player_Move : MonoBehaviour
 
         // カメラをプレイヤーの位置に追従させる
         Camera.transform.position = transform.position;
+
+        //何かのエラーでプレイヤーが落ちてしまった場合、スタート地点に戻す
+        if(transform.position.y < -10f)
+        {
+            transform.position = new Vector3(13.6f, 11.7f, 19.9f);
+        }
     }
 
     void Move()
