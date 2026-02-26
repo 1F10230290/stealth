@@ -25,9 +25,11 @@ public class FieldOfView : MonoBehaviour
 
     private MeshFilter viewMeshFilter; // 視界のメッシュを描画するためのMeshFilter
     private Mesh viewMesh; // 視界のメッシュ
+     private GameManager gameManager;
 
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         // MeshFilterコンポーネントを取得してメッシュを初期化
         viewMeshFilter = GetComponent<MeshFilter>();
         viewMesh = new Mesh();
@@ -78,6 +80,7 @@ public class FieldOfView : MonoBehaviour
                     visibleTargets.Add(target);
                     Debug.Log("プレイヤー発見！: " + target.name);
                     // ここで「ゲームオーバー」や「追跡モード」などの処理を呼ぶ
+                    gameManager.GameOver();
                 }
             }
         }
