@@ -3,6 +3,8 @@ using UnityEngine.AI;
 
 public class Enemy_Move : MonoBehaviour
 {
+    // ゲームオーバーUI
+    [SerializeField] private GameObject gameOverImage;
     
     //状態
     private enum State
@@ -84,7 +86,18 @@ public class Enemy_Move : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            
+            Debug.Log("プレイヤーを見つけた！");
+            target = other.transform;
+            currentState = State.EnCounter;
+
+            // ===== ゲームオーバー表示 =====
+            if (gameOverImage != null)
+            {
+                gameOverImage.SetActive(true);
+            }
+
+            // ===== ゲーム停止 =====
+            Time.timeScale = 0f;
         }
     }
 

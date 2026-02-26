@@ -112,10 +112,10 @@ public class Player_Move : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision col)
-{
-    if (col.gameObject.CompareTag("Item"))
     {
-        Destroy(col.gameObject);
+        if (col.gameObject.CompareTag("Item"))
+        {
+            Destroy(col.gameObject);
+        }
     }
-}
 }
