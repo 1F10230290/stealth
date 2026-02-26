@@ -1,15 +1,18 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject Operation_instructions;
+    [SerializeField] private GameObject manualPanel;
 
-    bool isOpen = false;
-
-    public void ToggleHelp()
+    // ボタンが押された時に実行するメソッド
+    public void ToggleManual()
     {
-        isOpen = !isOpen;
-        Operation_instructions.SetActive(isOpen);
+        if (manualPanel != null)
+        {
+            // 現在の状態の「逆」に設定する（開いていれば閉じ、閉じていれば開く）
+            bool isActive = manualPanel.activeSelf;
+            manualPanel.SetActive(!isActive);
+        }
     }
 }
+

@@ -90,12 +90,6 @@ public class Enemy_Move : MonoBehaviour
             target = other.transform;
             currentState = State.EnCounter;
 
-            // ===== ゲームオーバー表示 =====
-            if (gameOverImage != null)
-            {
-                gameOverImage.SetActive(true);
-            }
-
             // ===== ゲーム停止 =====
             Time.timeScale = 0f;
         }
