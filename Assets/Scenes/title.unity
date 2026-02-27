@@ -3964,6 +3964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   GameCrearImage: {fileID: 155495851}
   GameOverImage: {fileID: 567072726}
+  finished: 0
 --- !u!4 &916525384
 Transform:
   m_ObjectHideFlags: 0
@@ -4013,7 +4014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -169}
+  m_AnchoredPosition: {x: 0, y: -114}
   m_SizeDelta: {x: 800, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947270508
@@ -4036,7 +4037,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u9B54\u738B\u9B42\n\u305B\u306E\u3073\u30B4\u30B7\u30C3\u30AF"
+  m_text: "\u9B54\u738B\u9B42\n\u305B\u306E\u3073\u30B4\u30B7\u30C3\u30AF\n\u30D7\u30EC\u30A4\u30E4\u30FC\uFF1ACh15_nonPBR\n\u6575\uFF1ALowPolySoliders\n\u5EFA\u7269\uFF1ADesert
+    Building\n\u5EFA\u7269\uFF08\u57FA\u5730\uFF09:  LB3D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e1c76f67d6442a843a73262f0328db27, type: 2}
   m_sharedMaterial: {fileID: -5586223877060503529, guid: e1c76f67d6442a843a73262f0328db27, type: 2}
@@ -4063,8 +4065,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6446,13 +6448,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415936337}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: -0.86251366, y: 0, z: 0, w: 0.50603384}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -119.2, y: 0, z: 0}
 --- !u!4 &1416069859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1454482104356440768, guid: 38be789410d69ef40a29459dfa506f11, type: 3}

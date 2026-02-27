@@ -25,7 +25,9 @@ public class FieldOfView : MonoBehaviour
 
     private MeshFilter viewMeshFilter; // 視界のメッシュを描画するためのMeshFilter
     private Mesh viewMesh; // 視界のメッシュ
+    private MeshRenderer viewMeshRenderer;
      private GameManager gameManager;
+     private bool gameOver;
 
     void Start()
     {
@@ -35,8 +37,11 @@ public class FieldOfView : MonoBehaviour
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
+        viewMeshRenderer = GetComponent<MeshRenderer>();
 
         StartCoroutine("FindTargetsWithDelay", 0.2f); // 0.2秒ごとに検知処理を行う
+
+        gameOver = false;
     }
 
     void LateUpdate()
@@ -63,6 +68,17 @@ public class FieldOfView : MonoBehaviour
         // 視界の距離内にいるターゲット候補を取得
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
 
+        if (gameOver)
+        {
+            // ターゲット発見時は赤
+            viewMeshRenderer.material.color = new Color(1f, 0f, 0f, 0.5f); 
+        }
+        else
+        {
+            // 通常時は青（半透明）
+            viewMeshRenderer.material.color = new Color(0f, 0.5f, 1f, 0.5f);
+        }
+
         // 各ターゲットが視界の角度内に入っているか、障害物がないかをチェック
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
@@ -79,6 +95,7 @@ public class FieldOfView : MonoBehaviour
                 {
                     visibleTargets.Add(target);
                     Debug.Log("プレイヤー発見！: " + target.name);
+                    gameOver = true;
                     // ここで「ゲームオーバー」や「追跡モード」などの処理を呼ぶ
                     gameManager.GameOver();
                 }
