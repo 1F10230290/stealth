@@ -1,9 +1,11 @@
 using NUnit.Framework;
 using UnityEngine;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject manualPanel;
+    public TextMeshProUGUI buttonText;
     private Player_Move player_Move;
     
 
@@ -19,11 +21,13 @@ public class UIManager : MonoBehaviour
             {
                 player_Move.canMove = true; // プレイヤーの移動を許可
                 Time.timeScale = 1f; // ゲームを再開
+                buttonText.text = "操作説明書"; // ボタンのテキストを「操作説明書」に変更
             }
             else
             {
                 player_Move.canMove = false; // プレイヤーの移動を禁止
                 Time.timeScale = 0f; // ゲームを停止
+                buttonText.text = "とじる"; // ボタンのテキストを「とじる」に変更
             }
             manualPanel.SetActive(!isActive);
         }

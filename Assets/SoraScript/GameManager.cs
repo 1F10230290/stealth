@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public Image GameCrearImage;
     public Image GameOverImage;
+    public Player_Move player_Move;
     public bool finished = false;
+    public GameObject introductionPanel;
 
     void Start()
     {
         finished = false;
-        Time.timeScale = 1;
+        player_Move.canMove = false;
         GameCrearImage.gameObject.SetActive(false);
         GameOverImage.gameObject.SetActive(false);
     }
@@ -40,5 +42,11 @@ public class GameManager : MonoBehaviour
     private void TimeStop()
     {
         Time.timeScale = 0f;
+    }
+
+    public void GameStart()
+    {
+        introductionPanel.gameObject.SetActive(false);
+        player_Move.canMove = true;
     }
 }
