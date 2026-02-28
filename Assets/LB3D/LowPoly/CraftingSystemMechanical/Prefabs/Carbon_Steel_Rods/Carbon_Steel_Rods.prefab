@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 767458772884516191}
   - component: {fileID: 767458772870707705}
   - component: {fileID: 767458772884812158}
+  - component: {fileID: 3578708780784456292}
   m_Layer: 13
   m_Name: Carbon_Steel_Rods
   m_TagString: Item
@@ -32,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8693851027647808175}
+  - {fileID: 268541577033952534}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!205 &767458772870707705
@@ -78,6 +80,81 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.50458646, y: 0.9962629, z: 0.21227849}
   m_Center: {x: 0.0019173622, y: 0.0028947592, z: 0.10613924}
+--- !u!114 &3578708780784456292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767458772884812159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b421f1d70a9d7c94dbf071007f5d194c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Items
+  itemNum: 3
+--- !u!1001 &1149082638410303823
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 767458772884516191}
+    m_Modifications:
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.23614645
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297839578030903007, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+      propertyPath: m_Name
+      value: ItemEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+--- !u!4 &268541577033952534 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 885047170691753049, guid: b7709311782783e4db1cad5d916ad596, type: 3}
+  m_PrefabInstance: {fileID: 1149082638410303823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9163833550521345348
 PrefabInstance:
   m_ObjectHideFlags: 0
